@@ -1,0 +1,119 @@
+---
+title: "Natural Language Processing"
+format:
+  html:
+    toc: true
+    embed-resources: true
+    page-layout: custom
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, label = Packages, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(dcutilities)
+library(rforce)
+
+# Automatically archives HTML file versions and optionally opens a file after rendering
+#.Last = function(){archive.html.report(open = F, prefix = NULL)}
+
+# This might currently be broken
+.Last = function(){archive.quarto.output("Natural-Language-Processing.html", open = F, prefix = NULL)}
+
+
+options("dcutilities.prep.table" = "flex")
+
+example.table1 = tibble(x = 1:5, y = 5:1) %>% prep.table()
+
+
+example.figure.1 = ggplot(tibble(x = 1:5, y = 5:1), aes(x, y))+geom_point()
+example.figure.2 = ggplot(tibble(x = 1:5, y = 5:1), aes(y, x))+geom_point()
+
+
+# This function can be used to automatically insert the date range of the data into the word doc
+#add.data.date()
+
+prep.refs("Natural-Language-Processing.qmd")
+
+```
+
+`r quarto.header()`
+
+# TOP LEVEL HEADING
+
+```{r, echo = FALSE, output = 'asis', include = FALSE }
+# The top level heading can be static by using the # TOP LEVEL HEADING above.
+# If a dynamic title is required (e.g., to include a report period date in the title), swap in below and make this chunk be included
+
+.dynamic.title.content = "DYNAMIC TITLE CONTENT"
+
+str_c("# ", .dynamic.title.content) %>% cat()
+add.output.h1(.dynamic.title.content)
+
+# When using HTML the word version is ignored and vice versa when using word
+
+
+```
+
+## Second Level Content Heading
+
+The top level content headings get their own tabs. The next 2 heading levels get an entry in the ToC (HTML only).
+
+### Using the template
+
+Tables and figures can be placed using `place.table()` and `place.fig()`. Captions can optionally be included when placing. Table numbers will be generated automatically from `prep.refs()` in the initial setup block. To refer to a table with its table number, use `ref()`. As an example `r ref(example.table1)` is referred to here, and placed below:
+
+```{r}
+place.table(example.table1, "An example table.")
+```
+
+To have part of the word document be landscape, everything between `::: landscape` and `:::` will be rendered to landscape pages. E.g., `r ref(example.figure.1)` will be on a portrait page and `r ref(example.figure.2)` will be on a landscape page.
+
+This will be portrait
+
+```{r}
+place.fig(example.figure.1, "Like the table example, except a figure.")
+```
+
+::: landscape
+This will be landscape
+
+```{r}
+place.fig(example.figure.2, "Like the first example figure, except backwards.")
+```
+:::
+
+This will also be portrait
+
+# Another Top Level
+
+## Word documents
+
+For content outside chunks, any R code (except for place.table and place.fig), will be treated as if it were returning text. Returning anything else will probably break everything.
+
+Content inside chunks will be run when rendering to word documents but any outputs (e.g., text) will not appear in the document. The only exceptions are using place.table/fig or any of the output functions. See examples below.
+
+```{r}
+# Will be included
+place.table(table.name)
+```
+
+```{r}
+# Won't be included
+table.name 
+```
+
+```{r}
+# Won't be included
+text.content = "some more text"
+text.content = str_glue("Some text, and {text.content}")
+text.content
+```
+
+```{r}
+# Will be included
+text.content = "some more text"
+text.content = str_glue("Some text, and {text.content}")
+
+add.output(text.content)
+```

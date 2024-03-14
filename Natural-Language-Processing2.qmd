@@ -1,0 +1,70 @@
+---
+format: 
+  docx:
+    reference-doc: resources/outputs.docx
+editor_options:
+chunk_output_type: console
+---
+```{r, include = FALSE}
+# This is for HTML format
+# ---
+# format:
+#   html:
+#     toc: true
+#     embed-resources: true
+#     page-layout: custom
+#     standalone: true
+# editor_options: 
+#   chunk_output_type: console
+# ---
+```
+
+
+```{r, label = Packages, include=FALSE}
+
+# This is the same for both HTML and word
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, results = 'asis',
+                      fig.width = 9.5) # Set the default figure width for word documents. 9.5 is for landscape and use 6.5 for portrait.
+                    
+library(dcutilities)
+library(rforce)
+
+run.quarto()
+prep.refs()
+
+example.table1 = tibble(x = 1:5, y = 5:1) %>% prep.table()
+example.figure.1 = ggplot(tibble(x = 1:5, y = 5:1), aes(x, y))+geom_point()
+example.figure.2 = ggplot(tibble(x = 1:5, y = 5:1), aes(y, x))+geom_point()
+
+```
+
+
+`r quarto.header()`
+
+# TOP LEVEL HEADING
+
+## Second Level Content Heading
+
+The top level content headings get their own tabs. The next 2 heading levels get an entry in the ToC (HTML only).
+
+### Using the template
+
+Tables and figures can be placed using `place.table()` and `place.fig()`. Captions can optionally be included when placing. Table numbers will be generated automatically from `prep.refs()` in the initial setup block. To refer to a table with its table number, use `ref()`. As an example `r ref(example.table1)` is referred to here, and placed below. When rendering via quarto_render, captions need to be made as in this first example.
+
+
+
+`r `place.table(example.table1, "Tables can go in here")`
+
+
+```{r , fig.width = 7}
+cap(example.figure.1, "An example for how to place a figure and its caption")
+place.fig(example.figure.1)
+```
+
+##### `r ref(example.table2)`. Alternative way of doing figure captions
+```{r , fig.width = 7}
+place.fig(example.figure.2)
+```
+
+
+

@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 145 35' preserveAspectRatio="xMinYMid meet" x="0px" y="0px" xml:space="preserve">
+
+
+<style>
+  .purple {
+  fill: #612576;
+  font-family: Segoe UI;
+  font-size: 10px;
+  font-weight: bold;
+  }
+
+.and {
+fill: #612576;
+font-family: Segoe UI;
+font-size: 10px;
+font-weight: bold;
+}
+
+.orange {
+fill: #EB7021;
+font-family: Segoe UI;
+font-size: 10px;
+font-weight: bold;
+}
+
+.light {
+font-weight: normal;
+}
+
+</style>
+
+<text x="5" y="0">
+<tspan class="purple" x="5" y="10">The</tspan>
+<tspan class="purple" x="5" y="20">Dementia</tspan>
+<tspan class="purple" x="5" y = "30">Centre</tspan><tspan class="orange">.</tspan>
+</text>
+
+<rect x="55" y="3" height="27" width="0.2" style="fill: #b0b0b0; stroke: none;"/>
+
+<text>
+  <tspan class="orange" x="60" y="10">
+<tspan x="60" y="15">Research</tspan>
+<tspan class="and" x="102" y="15" >&amp;</tspan>
+  </tspan>
+  <tspan class="orange" x="68" y="25">Analytics</tspan>
+</text>
+
+
+
+
+
+<svg viewBox="0 0 720 720" width="25" height="25" x = "113" y = "8">
+
+    <g transform="matrix(0.1, 0, 0, -0.1, 0, 512)" fill="#000000" stroke="none">
+      <path d="M63 5100 c-68 -41 -63 180 -63 -2542 0 -2425 0 -2463 20 -2495 41
+  -68 -180 -63 2542 -63 2425 0 2463 0 2495 20 61 37 79 108 43 167 -41 68 172
+  63 -2465 63 l-2385 0 0 2388 c0 2350 0 2387 -20 2419 -37 61 -108 79 -167 43z" style="fill: rgb(75, 40, 132);"></path>
+      <path d="M543 4235 c-28 -20 -46 -75 -34 -106 5 -13 19 -33 31 -44 22 -20 38
+  -20 1549 -23 839 -2 1546 0 1570 3 89 13 124 105 60 159 l-31 26 -1562 0
+  c-1373 0 -1564 -2 -1583 -15z" style="fill: rgb(244, 119, 33);"></path>
+      <path d="M1010 3703 c-50 -19 -76 -70 -59 -120 22 -67 -24 -64 925 -61 l856 3
+  24 28 c15 18 24 41 24 62 0 21 -9 44 -24 62 l-24 28 -854 2 c-469 1 -860 -1
+  -868 -4z" style="fill: rgb(205, 22, 63);"></path>
+      <path d="M2339 3231 c-59 -59 -24 -143 64 -156 23 -3 405 -5 849 -3 797 3 807
+  3 834 24 34 25 46 65 33 104 -23 63 26 60 -904 60 l-847 0 -29 -29z" style="fill: rgb(104, 43, 141);"></path>
+      <path d="M786 2294 c-19 -20 -26 -37 -26 -66 0 -51 32 -84 91 -93 24 -3 412
+  -5 861 -3 808 3 817 3 844 24 34 25 46 65 33 104 -23 63 27 60 -917 60 l-859
+  0 -27 -26z" style="fill: rgb(141, 84, 162);"></path>
+      <path d="M1444 1798 c-51 -24 -62 -105 -19 -147 l25 -26 544 0 544 0 25 23
+  c14 13 27 36 30 50 7 36 -18 86 -49 101 -33 15 -1069 14 -1100 -1z" style="fill: rgb(104, 43, 141);"></path>
+      <path d="M2491 1416 c-26 -15 -50 -51 -51 -79 0 -33 29 -75 61 -86 44 -15
+  1004 -15 1048 0 31 11 61 52 61 84 0 29 -28 71 -55 83 -40 18 -1031 16 -1064
+  -2z" style="fill: rgb(198, 64, 151);"></path>
+      <path d="M3545 1050 c-40 -13 -65 -47 -65 -92 0 -28 7 -42 31 -62 l31 -26 507
+  0 c559 0 539 -2 561 64 12 39 3 71 -30 101 -21 19 -37 20 -514 22 -271 1 -504
+  -2 -521 -7z" style="fill: rgb(244, 119, 33);"></path>
+    </g>
+  </svg>
+
+
+
+</svg>
