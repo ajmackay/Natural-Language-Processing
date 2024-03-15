@@ -1,9 +1,8 @@
-# Prep ----
-library(dcutilities)
-library(AzTools) # devtools::install_github("https://github.com/ajmackay/AzTools")
+library(scriptuRs)
+library(tibble)
 
-source("scripts/functions.R")
-cached.source("load-data", clear = !TRUE)
+newtest_df <- scriptuRs::new_testament %>% tibble()
+oldtest_df <- scriptuRs::old_testament %>% tibble()
 
 
 

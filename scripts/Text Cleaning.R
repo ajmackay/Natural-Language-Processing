@@ -3,8 +3,10 @@ library(tidytext)
 library(SnowballC)
 librarian::shelf("scriptuRs")
 
+
+source("scripts/01_process-data.R")
 ####| Data ####
-newtest_df <- scriptuRs::new_testament %>% tibble()
+
 
 matt_df <- newtest_df %>%
   filter(book_title == "Matthew")
@@ -49,3 +51,9 @@ newtest_df %>%
   mutate(word = wordStem(word)) %>%
   anti_join(stop_words) %>%
   count(word, sort = TRUE)
+
+
+####| Lemmatisation ####
+# Similar to stemming, but it looks at words within a context (e.g., a sentence)
+## So in both Stemming and Lemmatisation, "walking" becomes "walk",
+## but the word "meeting" in the context; "there was a meeting" will stay as "meeting" in lemmatisation but become "meet" in stemming
